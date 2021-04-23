@@ -9,6 +9,7 @@ def index():
     contenido = os.listdir('templates')
     contenido.remove("index.html")
     contenido.remove("layout.html")
+    print(contenido)
     return render_template("index.html", paginas = contenido)
 
 @app.route('/<string:file>')
@@ -16,4 +17,4 @@ def getFile(file):
 
     if file == "index.html":
         return redirect("/")
-    return render_template(file);   
+    return render_template(file);
